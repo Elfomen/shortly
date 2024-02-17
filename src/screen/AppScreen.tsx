@@ -3,8 +3,8 @@ import ApplicationNavigationBar from "../components/NavBar/nav";
 
 const ApplicationMainScreen = () => {
   return (
-    <div className="container mx-auto mt-5">
-      <div>
+    <div className="mx-auto mt-5">
+      <div className="">
         <ApplicationNavigationBar />
       </div>
       <Outlet />

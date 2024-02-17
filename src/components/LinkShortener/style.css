@@ -1,0 +1,38 @@
+.linkshortenerContainer {
+  width: 100%;
+  margin: auto;
+  background-color: hsl(257, 27%, 26%);
+  padding: 50px;
+  border-radius: 8px;
+  background-image: url("../../assets//images/bg-shorten-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.linkMainContainer {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50px);
+  /*left: 50%; */
+  /* transform: translateX(-50%); */
+}
+
+.shortenerInput {
+  width: 100%;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.formError > input {
+  border: 1px solid red;
+}
+
+.list_history_container {
+  background-color: white;
+  border-radius: 8;
+  padding: 15px;
+}

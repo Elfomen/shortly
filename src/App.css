@@ -117,3 +117,31 @@
 .color-gray {
   color: hsl(0, 0%, 75%);
 }
+
+.header-one {
+  font-size: 58px;
+}
+
+.header-two {
+  font-size: 42px;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-2 {
+  flex: 2;
+}
+
+.flex-3 {
+  flex: 3;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
