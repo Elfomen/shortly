@@ -7,6 +7,7 @@ export interface ButtonProps {
   size?: "small" | "medium" | "large";
   width?: string;
   type?: string;
+  className?: string;
 }
 
 export interface FooterLinkItemProps {

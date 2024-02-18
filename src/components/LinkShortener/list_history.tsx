@@ -3,9 +3,10 @@ import ButtonComponent from "../buttons/button";
 import { AppColors } from "../../themes/colors";
 
 const LinkHistory = () => {
-  const [history, setHistory] = useState([1, 1, 1, 1, 1]);
+  const li = "https://testingthelink.com/gobackhome/0809w8e508w9385ufsk/pp23js";
+  const [history, setHistory] = useState([1, 1, 1, 1, 1, 1, 1, 1, 1]);
   return (
-    <div>
+    <div className="linkListContainer">
       <br />
       {history.map((his) => (
         <div
@@ -13,12 +14,17 @@ const LinkHistory = () => {
           className="mb-5 list_history_container flex flex-row items-center"
         >
           <div className="flex-1">
-            <span>
-              https://testingthelink.com/gobackhome/0809w8e508w9385ufsk/pp23js
+            <span style={{ fontSize: "15px" }}>
+              {li.slice(0, 42)}
+              {li?.length > 42 ? "..." : ""}
             </span>
           </div>
-          <div className="flex flex-row items-center">
-            <span style={{ color: AppColors.cyan }} className="mr-3">
+          <hr className="link_result_seperator" />
+          <div className="flex flex-row items-center link_history_result_container">
+            <span
+              style={{ color: AppColors.cyan, fontSize: "15px" }}
+              className="mr-3"
+            >
               https://rel.ink/k43yu
             </span>
             <ButtonComponent
@@ -26,6 +32,7 @@ const LinkHistory = () => {
               radius={8}
               size="large"
               onPress={() => {}}
+              className="link_result_copy_button"
             />
           </div>
         </div>

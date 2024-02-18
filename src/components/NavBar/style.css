@@ -1,0 +1,31 @@
+.navbarHamburgerMenu {
+  width: 90%;
+  position: fixed;
+  margin: auto;
+  min-height: 300px;
+  background-color: rgb(58, 48, 82);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-out;
+  transform: translateX(200%);
+}
+
+.navbarHamburgerMenu.show {
+  transform: translateX(5%);
+}
+
+.burgerIconButton {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .burgerIconButton {
+    display: flex;
+  }
+  .navigationMainContainerNavbar > div:not(:nth-child(3)) {
+    display: none;
+  }
+}

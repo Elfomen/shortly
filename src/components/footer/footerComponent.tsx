@@ -11,7 +11,10 @@ const FooterComponent = () => {
       style={{ backgroundColor: "rgb(35,32,39)" }}
       className="pl-20 pr-20 pt-20 pb-40"
     >
-      <div className="flex flex-row" style={{ alignItems: "flex-start" }}>
+      <div
+        className="footerContainerComp flex flex-row"
+        style={{ alignItems: "flex-start" }}
+      >
         <div className="logo flex-2">
           <h3
             className="poppins-bold mr-10"

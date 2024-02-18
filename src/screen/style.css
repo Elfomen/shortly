@@ -3,7 +3,7 @@
   left: 0;
   right: 0;
   z-index: 1;
-  height: 13px;
+  height: 9px;
   background-color: hsl(180, 66%, 49%);
 }
 
@@ -50,4 +50,42 @@
 
 .socialIcons:hover {
   fill: hsl(180, 66%, 49%) !important;
+}
+
+@media (max-width: 870px) {
+  .homeHeaderBanner {
+    flex-direction: column-reverse;
+  }
+  .homeHeaderBanner > div {
+    margin-bottom: 20px;
+  }
+  .homeHeaderBanner > div > h1,
+  .homeHeaderBanner > div > p {
+    text-align: center;
+  }
+
+  .getStartedButton {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 690px) {
+  .homeCardComponentContainer {
+    flex-direction: column !important;
+  }
+
+  .home_card:nth-child(3) {
+    margin-right: 18px;
+  }
+
+  .home_card > .icon.absolute {
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .home_card > div > h4,
+  .home_card > div > p {
+    text-align: center;
+  }
 }

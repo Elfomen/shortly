@@ -11,6 +11,7 @@ const ButtonComponent: React.FC<ButtonProps> = ({
   color,
   width,
   type,
+  className,
 }) => {
   return (
     <input
@@ -24,7 +25,7 @@ const ButtonComponent: React.FC<ButtonProps> = ({
         width: width || "125px",
         height: size === "large" ? "250px" : size === "medium" ? "100px" : "70",
       }}
-      className="app_button"
+      className={`app_button ${className}`}
       value={label}
     />
   );

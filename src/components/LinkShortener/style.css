@@ -36,3 +36,43 @@
   border-radius: 8;
   padding: 15px;
 }
+
+.linkListContainer {
+  height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+@media (max-width: 750px) {
+  .list_history_container {
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+  }
+
+  .link_history_result_container {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    width: 100%;
+  }
+
+  .list_history_container > div,
+  .list_history_container > .link_history_result_container > span {
+    margin-bottom: 15px;
+  }
+
+  .link_result_copy_button,
+  .linkFormSubmitButton,
+  .shortenerInput,
+  .shortenerInputContainer {
+    width: 100% !important;
+  }
+
+  .linkFormSubmitButton {
+    margin-top: 40px;
+  }
+
+  .linsShortenerFormContainer {
+    flex-direction: column !important;
+  }
+}

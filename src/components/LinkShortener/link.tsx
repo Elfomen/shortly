@@ -30,8 +30,12 @@ const HomeLinkShortenerComponent = () => {
     <div className="linkMainContainer">
       <div className="linkshortenerContainer">
         <form action="" onSubmit={shortenUrl}>
-          <div className="flex flex-row items-center">
-            <div className={`flex-1 mr-5 ${error && "formError"} relative`}>
+          <div className="flex flex-row items-center linsShortenerFormContainer">
+            <div
+              className={`flex-1 mr-5 ${
+                error && "formError"
+              } relative shortenerInputContainer`}
+            >
               <input
                 className="shortenerInput"
                 type="text"
@@ -58,6 +62,7 @@ const HomeLinkShortenerComponent = () => {
               label="Shorten it!"
               onPress={() => {}}
               type="submit"
+              className="linkFormSubmitButton"
             />
           </div>
         </form>
