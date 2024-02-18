@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ButtonComponent from "../buttons/button";
 import "./style.css";
 import LinkHistory from "./list_history";
+import axiosEvent from "../../hooks/useAxios";
+import { LinksInterface } from "../../types";
 
 const HomeLinkShortenerComponent = () => {
   const [error, setError] = useState<boolean>(false);
   const [url, setUrl] = useState<string>("");
-
+  const [loading, setLoading] = useState(false);
+  const [allLinks, setAllLinks] = useState<LinksInterface[]>([]);
   const handleInputChange = (e: any) => {
     const value = e.target.value;
     if (value) {
@@ -17,14 +20,50 @@ const HomeLinkShortenerComponent = () => {
     }
   };
 
+  function isValidUrl(url: string) {
+    // Regular expression pattern to match a URL
+    var urlPattern =
+      /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w.-]*)*\/?$/;
+    return urlPattern.test(url);
+  }
+
   const shortenUrl = async (e: any) => {
     e.preventDefault();
     if (!url) {
       setError(true);
     } else {
-      setError(false);
+      if (isValidUrl(url)) {
+        setError(false);
+        try {
+          setLoading(true);
+          let shortened = await axiosEvent.post("", {
+            url: url,
+          });
+          setLoading(false);
+          const result = shortened.data;
+          const data: LinksInterface = {
+            url: result?.url,
+            shorten: result?.shrtlnk,
+          };
+
+          setAllLinks((oldLinks) => [data, ...oldLinks]);
+          localStorage.setItem("links", JSON.stringify([data, ...allLinks]));
+        } catch (error: any) {
+          setLoading(false);
+          console.log("====================================");
+          console.log(error?.response?.data);
+          console.log("====================================");
+        }
+      } else {
+        setError(true);
+      }
     }
   };
+
+  useEffect(() => {
+    const list = localStorage.getItem("links");
+    setAllLinks(JSON.parse(list || "[]"));
+  }, []);
 
   return (
     <div className="linkMainContainer">
@@ -63,13 +102,14 @@ const HomeLinkShortenerComponent = () => {
               onPress={() => {}}
               type="submit"
               className="linkFormSubmitButton"
+              loading={loading}
             />
           </div>
         </form>
       </div>
 
       <div style={{ width: "100%", margin: "auto" }}>
-        <LinkHistory />
+        <LinkHistory links={allLinks} />
       </div>
     </div>
   );

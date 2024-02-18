@@ -23,7 +23,7 @@
 
 .shortenerInput {
   width: 100%;
-  padding: 20px;
+  padding: 10px;
   border-radius: 8px;
 }
 
@@ -38,7 +38,7 @@
 }
 
 .linkListContainer {
-  height: 500px;
+  /* height: 500px; */
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -68,11 +68,28 @@
     width: 100% !important;
   }
 
+  .shortenerInputContainer {
+    margin-right: 0 !important;
+  }
+
   .linkFormSubmitButton {
     margin-top: 40px;
   }
 
   .linsShortenerFormContainer {
     flex-direction: column !important;
+  }
+}
+
+@media (max-width: 570px) {
+  .header-one {
+    font-size: 29px !important;
+  }
+  .header-two {
+    font-size: 26px;
+  }
+
+  .advancedStatoContainer {
+    width: 80% !important;
   }
 }

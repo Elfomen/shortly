@@ -60,7 +60,10 @@ const HomeScreen = () => {
           <HomeLinkShortenerComponent />
         </div>
 
-        <div style={{ width: "40%", margin: "auto" }}>
+        <div
+          style={{ width: "40%", margin: "auto" }}
+          className="advancedStatoContainer"
+        >
           <center>
             <h2 className="poppins-bold  header-two">Advanved Statistics</h2>
             <p className="" style={{ color: AppColors.gray }}>

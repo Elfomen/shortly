@@ -75,8 +75,16 @@
     flex-direction: column !important;
   }
 
-  .home_card:nth-child(3) {
-    margin-right: 18px;
+  .home_card {
+    margin-right: 0 !important;
+  }
+
+  .home_card {
+    margin-bottom: 20px !important;
+  }
+
+  .home_card > div > p {
+    margin-bottom: 16px;
   }
 
   .home_card > .icon.absolute {

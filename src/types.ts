@@ -8,6 +8,7 @@ export interface ButtonProps {
   width?: string;
   type?: string;
   className?: string;
+  loading?: boolean;
 }
 
 export interface FooterLinkItemProps {
@@ -18,4 +19,9 @@ export interface FooterLinkItemProps {
 export interface FooterLinkComponentProps {
   title: string;
   links: FooterLinkItemProps[];
+}
+
+export interface LinksInterface {
+  url: string;
+  shorten: string;
 }

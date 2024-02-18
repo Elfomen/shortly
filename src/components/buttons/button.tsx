@@ -12,6 +12,7 @@ const ButtonComponent: React.FC<ButtonProps> = ({
   width,
   type,
   className,
+  loading,
 }) => {
   return (
     <input
@@ -23,16 +24,13 @@ const ButtonComponent: React.FC<ButtonProps> = ({
         color: color || "white",
         cursor: "pointer",
         width: width || "125px",
+        pointerEvents: loading ? "none" : "visible",
         height: size === "large" ? "250px" : size === "medium" ? "100px" : "70",
       }}
       className={`app_button ${className}`}
-      value={label}
+      value={loading ? "Loading..." : label}
     />
   );
-};
-
-const getButtonStyles = (props: Partial<ButtonProps>) => {
-  return {};
 };
 
 export default ButtonComponent;

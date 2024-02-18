@@ -13,7 +13,10 @@
   }
 
   .footerContainerComp > div > h4,
-  .footerContainerComp > div > div > a {
+  .footerContainerComp > div > div {
     text-align: center;
+  }
+  .logo > h3 {
+    margin-right: 0 !important;
   }
 }
