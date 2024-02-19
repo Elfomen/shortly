@@ -7,10 +7,12 @@ const LinkHistory: React.FC<{ links: LinksInterface[] }> = ({ links }) => {
   return (
     <div className="linkListContainer">
       <br />
-      {links?.map((his) => (
+      {links?.map((his, key: number) => (
         <div
           style={{ borderRadius: "8px" }}
           className="mb-5 list_history_container flex flex-row items-center"
+          data-testid="link_history_list_testid"
+          key={key}
         >
           <div className="flex-1">
             <span style={{ fontSize: "15px" }}>
