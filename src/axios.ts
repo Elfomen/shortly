@@ -9,7 +9,7 @@ const event = axios.create({
 });
 
 axios.interceptors.request.use((value) => {
-  value.headers["api-key"] = "1ZSxb3e8UgQjv6NjhOTLCtB4yFHrmS0HeXMyRjG0HPjbc";
+  value.headers["api-key"] = "5Bza7Mcp1nkNzmC622LfyEdtxyTMx29kI4JO9fZYCDuCY";
   return value;
 });
 
