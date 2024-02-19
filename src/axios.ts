@@ -5,12 +5,8 @@ const event = axios.create({
   headers: {
     Accept: "application/json",
     "Content-Type": "application/json",
+    "api-key": "5Bza7Mcp1nkNzmC622LfyEdtxyTMx29kI4JO9fZYCDuCY",
   },
-});
-
-axios.interceptors.request.use((value) => {
-  value.headers["api-key"] = "5Bza7Mcp1nkNzmC622LfyEdtxyTMx29kI4JO9fZYCDuCY";
-  return value;
 });
 
 export default event;

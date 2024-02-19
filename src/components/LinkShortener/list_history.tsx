@@ -4,6 +4,22 @@ import { AppColors } from "../../themes/colors";
 import { LinksInterface } from "../../types";
 
 const LinkHistory: React.FC<{ links: LinksInterface[] }> = ({ links }) => {
+  const [copied, setCopied] = useState("");
+
+  const copyToClipBoard = (text: string) => {
+    navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        setCopied(text);
+        setTimeout(() => {
+          setCopied("");
+        }, 2000);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div className="linkListContainer">
       <br />
@@ -29,11 +45,14 @@ const LinkHistory: React.FC<{ links: LinksInterface[] }> = ({ links }) => {
               {his?.shorten}
             </span>
             <ButtonComponent
-              label="Copy"
+              label={copied === his?.shorten ? "Copied!" : "Copy"}
               radius={8}
               size="large"
-              onPress={() => {}}
+              onPress={() => copyToClipBoard(his?.shorten)}
               className="link_result_copy_button"
+              backgroundColor={
+                copied === his?.shorten ? "rgb(58,48,82)" : AppColors.cyan
+              }
             />
           </div>
         </div>

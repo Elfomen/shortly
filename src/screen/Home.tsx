@@ -9,8 +9,14 @@ import FullyCustom from "../assets/images/icon-fully-customizable.svg";
 
 import FooterComponent from "../components/footer/footerComponent";
 import HomeCardComponent from "../components/homeCard";
+import { useRef } from "react";
 
 const HomeScreen = () => {
+  const shortenFormRef = useRef<any>();
+
+  const goToGettingStarted = () => {
+    shortenFormRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <div style={{}}>
       <div className="ml-20 mr-20">
@@ -24,7 +30,10 @@ const HomeScreen = () => {
               your links are performing
             </p>
             <div className="flex flex-row items-center getStartedButton">
-              <ButtonComponent label="Get Started" onPress={() => {}} />
+              <ButtonComponent
+                label="Get Started"
+                onPress={goToGettingStarted}
+              />
             </div>
           </div>
           <div
@@ -56,7 +65,7 @@ const HomeScreen = () => {
           // height: "400px",
         }}
       >
-        <div className="">
+        <div className="" ref={shortenFormRef}>
           <HomeLinkShortenerComponent />
         </div>
 
@@ -118,7 +127,11 @@ const HomeScreen = () => {
             >
               Boost your links today
             </h3>
-            <ButtonComponent label="Get Started" size="large" />
+            <ButtonComponent
+              label="Get Started"
+              size="large"
+              onPress={goToGettingStarted}
+            />
           </center>
         </div>
 
