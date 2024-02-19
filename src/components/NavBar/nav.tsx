@@ -45,7 +45,7 @@ const ApplicationNavigationBar = () => {
           style={{ cursor: "pointer", fontSize: "24px" }}
           onClick={() => setShow(!show)}
         >
-          &#127828;
+          &#9776;
         </span>
       </div>
       <div className={`navbarHamburgerMenu ${show && "show"}`}>
