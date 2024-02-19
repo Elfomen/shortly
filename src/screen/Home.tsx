@@ -5,7 +5,6 @@ import HomeLinkShortenerComponent from "../components/LinkShortener/link";
 import "./style.css";
 import GraphImage from "../assets/images/icon-brand-recognition.svg";
 import PensilImage from "../assets/images/icon-detailed-records.svg";
-import FullyCustom from "../assets/images/icon-fully-customizable.svg";
 
 import FooterComponent from "../components/footer/footerComponent";
 import HomeCardComponent from "../components/homeCard";
