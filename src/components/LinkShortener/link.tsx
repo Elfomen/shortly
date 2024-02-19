@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ButtonComponent from "../buttons/button";
 import "./style.css";
 import LinkHistory from "./list_history";
-import axiosEvent from "../../hooks/useAxios";
+import axiosEvent from "../../axios";
 import { LinksInterface } from "../../types";
 
 const HomeLinkShortenerComponent = () => {
@@ -80,6 +80,7 @@ const HomeLinkShortenerComponent = () => {
                 type="text"
                 placeholder="Shorten a link here"
                 onChange={handleInputChange}
+                name="shortlink_input_name"
               />
               {error && (
                 <span
