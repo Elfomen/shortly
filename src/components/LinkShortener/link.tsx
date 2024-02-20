@@ -48,6 +48,7 @@ const HomeLinkShortenerComponent = () => {
 
           setAllLinks((oldLinks) => [data, ...oldLinks]);
           localStorage.setItem("links", JSON.stringify([data, ...allLinks]));
+          setUrl("");
         } catch (error: any) {
           setLoading(false);
           console.log("====================================");
