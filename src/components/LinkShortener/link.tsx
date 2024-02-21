@@ -32,32 +32,33 @@ const HomeLinkShortenerComponent = () => {
     if (!url) {
       setError(true);
     } else {
-      if (isValidUrl(url)) {
-        setError(false);
-        try {
-          setLoading(true);
-          let shortened = await axiosEvent.post("", {
-            url: url,
-          });
-          setLoading(false);
-          const result = shortened.data;
-          const data: LinksInterface = {
-            url: result?.url,
-            shorten: result?.shrtlnk,
-          };
+      setError(false);
+      try {
+        setLoading(true);
+        let shortened = await axiosEvent.post("", {
+          url: url,
+        });
+        setLoading(false);
+        const result = shortened.data;
+        const data: LinksInterface = {
+          url: result?.url,
+          shorten: result?.shrtlnk,
+        };
 
-          setAllLinks((oldLinks) => [data, ...oldLinks]);
-          localStorage.setItem("links", JSON.stringify([data, ...allLinks]));
-          setUrl("");
-        } catch (error: any) {
-          setLoading(false);
-          console.log("====================================");
-          console.log(error?.response?.data);
-          console.log("====================================");
-        }
-      } else {
-        setError(true);
+        setAllLinks((oldLinks) => [data, ...oldLinks]);
+        localStorage.setItem("links", JSON.stringify([data, ...allLinks]));
+        setUrl("");
+      } catch (error: any) {
+        setLoading(false);
+        console.log("====================================");
+        console.log(error?.response?.data);
+        console.log("====================================");
       }
+      // if (isValidUrl(url)) {
+
+      // } else {
+      //   setError(true);
+      // }
     }
   };
 
@@ -82,6 +83,7 @@ const HomeLinkShortenerComponent = () => {
                 placeholder="Shorten a link here"
                 onChange={handleInputChange}
                 name="shortlink_input_name"
+                value={url}
               />
               {error && (
                 <span
